@@ -2,6 +2,7 @@
 'use strict';
 
 
-console.log("Hello, BuckleScript and Reason!");
+var apiKey = "00000";
 
-/*  Not a pure module */
+exports.apiKey = apiKey;
+/* No side effect */

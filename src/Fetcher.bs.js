@@ -67,7 +67,7 @@ var Private = /* module */[
   /* makeUrl */makeUrl
 ];
 
-function makeFetcher(url, deserialiser, errorDeserialiser, $staropt$star, subscribe, $staropt$star$1, $staropt$star$2, defaultHeaders, param) {
+function make(url, deserialiser, errorDeserialiser, $staropt$star, subscribe, $staropt$star$1, $staropt$star$2, defaultHeaders, param) {
   var method__ = $staropt$star !== undefined ? $staropt$star : /* Get */0;
   var body = $staropt$star$1 !== undefined ? Caml_option.valFromOption($staropt$star$1) : undefined;
   var baseUrl = $staropt$star$2 !== undefined ? Caml_option.valFromOption($staropt$star$2) : undefined;
@@ -123,9 +123,27 @@ function isPending(param) {
   }
 }
 
+function isError(param) {
+  if (typeof param === "number" || !param.tag) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function isFulfilled(param) {
+  if (typeof param === "number" || param.tag) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 exports.Deserialiser = Deserialiser;
 exports.Body = Body;
 exports.Private = Private;
-exports.makeFetcher = makeFetcher;
+exports.make = make;
 exports.isPending = isPending;
+exports.isError = isError;
+exports.isFulfilled = isFulfilled;
 /* Option-Rationale Not a pure module */

@@ -1,18 +1,15 @@
-# Basic Reason Template
-
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
-
+# Fetcheroo
+Boilerplate I use for handling requests in my Reason ML projects. It is a wrapper around bs-fetch providing an interface allowing
+for quick creation of composable fetchers. See example/Api.rs for example use.
 # Build
 ```
-npm run build
+yarn run build
 ```
 
 # Build + Watch
 
 ```
-npm run start
+yarn run start
 ```
 
 
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically

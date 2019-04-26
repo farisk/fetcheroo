@@ -55,7 +55,7 @@ module Private = {
 };
 open Private;
 
-type makeFetcher('success, 'error) =
+type maker('success, 'error) =
   (
     ~url: string,
     ~deserialiser: Deserialiser.t('success),
@@ -68,7 +68,7 @@ type makeFetcher('success, 'error) =
     unit
   ) =>
   unit;
-let makeFetcher: makeFetcher('a, 'b) =
+let make: maker('a, 'b) =
   (
     ~url,
     ~deserialiser,
@@ -123,3 +123,13 @@ let isPending =
   fun
   | Pending => true
   | _ => false;
+
+let isError =
+  fun
+    | Error(_) => true
+    | _ => false;
+
+let isFulfilled=
+  fun
+    | Fulfilled(_) => true
+    | _ => false;
